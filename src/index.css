@@ -2,56 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 210 17% 98%; /* PRD: #F8F9FA */
+    --foreground: 210 8% 31%;  /* PRD: #495057 (primaryText) */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%; /* PRD: #FFFFFF (surface) */
+    --card-foreground: 210 8% 31%; /* PRD: #495057 (primaryText) */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%; /* PRD: #FFFFFF (surface) */
+    --popover-foreground: 210 8% 31%; /* PRD: #495057 (primaryText) */
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 210 100% 50%; /* PRD: #0099FF (accentBlue) */
+    --primary-foreground: 0 0% 100%; /* White for contrast on accentBlue */
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 210 17% 95%; /* Lighter gray based on background */
+    --secondary-foreground: 208 7% 48%; /* PRD: #6C757D (secondaryText) */
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 210 17% 92%; /* Slightly darker gray for muted elements */
+    --muted-foreground: 208 7% 48%; /* PRD: #6C757D (secondaryText) */
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 45 100% 51%; /* PRD: #FFC107 (accentYellow) */
+    --accent-foreground: 210 8% 31%; /* PRD: #495057 (primaryText on accentYellow) */
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 10 100% 60%; /* PRD: #FF5733 (accentRed) */
+    --destructive-foreground: 0 0% 100%; /* White for contrast on accentRed */
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 210 17% 90%; /* PRD: #DEE2E6 */
+    --input: 210 17% 90%; /* PRD: #DEE2E6 (same as border) */
+    --ring: 210 100% 50%; /* PRD: #0099FF (accentBlue for focus rings) */
 
-    --radius: 0.5rem;
+    --radius: 0.375rem; /* PRD: rounded-md (6px) */
 
-    --sidebar-background: 0 0% 98%;
+    --font-sans: "Roboto", sans-serif; /* PRD: primaryFont */
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    /* Custom PRD colors not directly mapped to Shadcn names */
+    --accent-green: 145 61% 41%; /* PRD: #28A745 */
 
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Sidebar specific colors from PRD */
+    --sidebar-background: 210 30% 24%; /* PRD: #2A3E50 (sidebar) */
+    --sidebar-foreground: 210 14% 83%; /* Light gray text for dark sidebar (e.g., #D1D5DB) */
+    --sidebar-primary: 210 100% 50%; /* PRD: #0099FF (accentBlue for active items) */
+    --sidebar-primary-foreground: 0 0% 100%; /* White text for active items */
+    --sidebar-accent: 210 30% 30%; /* Slightly lighter sidebar background for hover/accent */
+    --sidebar-accent-foreground: 210 14% 90%; /* Slightly lighter text for hover */
+    --sidebar-border: 210 30% 20%; /* Darker border for sidebar elements */
+    --sidebar-ring: 210 100% 50%; /* PRD: #0099FF (accentBlue for focus) */
   }
 
   .dark {
+    /* Dark theme variables remain as per existing, PRD does not specify dark theme */
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
 
@@ -79,14 +81,17 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Update dark sidebar vars to complement PRD if possible, or keep existing */
+    /* Assuming dark theme sidebar will also be dark, but with different shades */
+    --sidebar-background: 222.2 84% 4.9%; /* e.g. same as dark background */
+    --sidebar-foreground: 210 40% 98%; /* e.g. same as dark foreground */
+    --sidebar-primary: 210 40% 98%; /* primary for dark sidebar */
+    --sidebar-primary-foreground: 222.2 47.4% 11.2%; /* text on primary dark sidebar */
+    --sidebar-accent: 217.2 32.6% 17.5%; /* accent for dark sidebar */
+    --sidebar-accent-foreground: 210 40% 98%; /* text on accent dark sidebar */
+    --sidebar-border: 217.2 32.6% 17.5%; /* border for dark sidebar */
+    --sidebar-ring: 212.7 26.8% 83.9%; /* ring for dark sidebar */
   }
 }
 
@@ -96,6 +101,10 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
